@@ -1,0 +1,9 @@
+<div class="minder-editor-container">
+    <button class="back-button" isshow="{{isshow}}" ng-click="back()">主页</button>
+    <div class="top-tab" top-tab="minder" isshow="isshow" editor="editor" ng-if="minder" ></div>
+    <div search-box minder="minder" ng-if="minder"></div>
+	<div class="minder-editor" mainSign="{{mainSign}}"></div>
+    <div class="km-note" note-editor minder="minder" ng-if="minder"></div>
+    <div class="note-previewer" note-previewer ng-if="minder"></div>
+    <div class="navigator" navigator minder="minder" ng-if="minder"></div>
+</div>

@@ -1,0 +1,66 @@
+<div>
+<div ng-show="isshow"  class="minder-main-container">
+    <div class="title">
+            <li>
+                <a ng-click="changeTitle(1)" class="title-home">主页</a>
+                <a ng-click="changeTitle(2)" class="title-a">关于作品</a>
+                <a ng-click="changeTitle(3)" class="title-a">使用指南</a>
+            </li>
+    </div>
+    <div ng-show="isTitle == 1" class="minder-top-container">
+        <h1 class="minder-title-container">星云思维</h1>
+        
+          <p>________</p>
+          <p>        </p>
+          <p>大脑与云端的碰撞</p>
+          <p>思维与星空连接，享受云端的思维体验</p>
+          <p>________</p>
+        
+        <div class="form-group">
+           
+           <input type="text" placeholder="请输入文件名称" class="form-control form-input" ng-model="filename">
+           
+        </div>
+        <div class="form-group group-button">
+                
+                        <button class="btn btn-primary new-botton" ng-click="next()">新建</button>
+                
+                        <button class="btn btn-success search-botton" ng-click="search()">查询</button>
+                
+        </div>
+        <div class="search-bottom" >
+            <li ng-repeat="root in rootDatas"><a ng-click="loadData(root)" class="search-a">{{root.title | stringfilter}}</a></li>
+        </div>
+    </div>
+    <div ng-show="isTitle == 2" class="minder-top-about">
+            <h1 class="minder-title-container">关于作品</h1>
+            <p>________</p>
+            <p>「星云思维」基于星云3.0公链开发</p>
+            <p>星云思维导图存储于星云链，真实有效无法篡改，方便使用</p>
+            <p>________</p>
+            <p>DApp开发简单初尝试</p>
+            <p>作品源码<a href="https://blog.nebulas.io/2018/04/12/creating-a-nas-wallet/" target="_blank" class="text-wheat">fdg</a>(欢迎star)</p>
+            <p>作者<a href="https://blog.nebulas.io/2018/04/12/creating-a-nas-wallet/" target="_blank" class="text-wheat">dfg</a></p>
+            <p>________</p>
+            <p>Copright © 2018 Nebulas-tarot</p>
+            <p>All Rights Reserved</p>
+            
+    </div>
+    <div ng-show="isTitle == 3" class="minder-top-guide">
+            <h1 class="minder-title-container">使用指南</h1>
+            <p>________</p>
+            <p>「星云思维」是一款思维导图应用</p>
+            <p>用户可以记录存储自己的星云思维导图文件</p>
+            <h1 class="minder-title-container">用户操作</h1>
+            <p>________</p>
+            <p>下载并<a href="https://blog.nebulas.io/2018/04/12/creating-a-nas-wallet/" target="_blank" class="text-wheat">
+                创建钱包
+              </a>存放在本地</p>
+            <p>然后在Chrome浏览器上安装<a href="https://github.com/ChengOrangeJu/WebExtensionWallet" target="_blank" class="text-wheat">
+                插件教程
+              </a>安装插件</p>
+    </div>
+    
+</div>
+<kityminder-editor isshow="isshow" mainSign="mainSign" ng-show="!isshow" on-init="initEditor(editor, minder)"></kityminder-editor>
+</div>
